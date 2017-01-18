@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Contexten\Mssql\Connstring.cs" />
+    <Compile Include="DAL\Contexten\Mssql\ProductMssql.cs" />
+    <Compile Include="DAL\Interfaces\IProduct.cs" />
     <Compile Include="DAL\Models\Baklijst.cs" />
     <Compile Include="DAL\Models\Bestelling.cs" />
     <Compile Include="DAL\Models\Ingredient.cs" />
@@ -86,6 +89,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DAL\Repositories\" />
     <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

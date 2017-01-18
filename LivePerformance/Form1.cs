@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LivePerformance.DAL.Contexten.Mssql;
 
 namespace LivePerformance
 {
@@ -15,6 +16,13 @@ namespace LivePerformance
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProductMssql pd = new ProductMssql();
+            MessageBox.Show(pd.GetAll()[0].Naam);
+            MessageBox.Show(pd.GetAll()[1].Naam);
         }
     }
 }

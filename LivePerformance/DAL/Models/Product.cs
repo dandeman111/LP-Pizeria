@@ -13,5 +13,12 @@ namespace LivePerformance.DAL.Models
         public string Naam { get; private set; }
         public bool Alcohol { get; private set; }
 
+        public Product(int id, double prijs, string naam, bool alcohol)
+        {
+            Id = id;
+            Prijs = prijs;
+            Naam = naam;
+            Alcohol = alcohol;
+        }
     }
 }
