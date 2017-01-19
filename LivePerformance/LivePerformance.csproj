@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestelForm.Designer.cs">
+      <DependentUpon>BestelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bon.Designer.cs">
+      <DependentUpon>Bon.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Contexten\Mssql\BestellingMssql.cs" />
     <Compile Include="DAL\Contexten\Mssql\Connstring.cs" />
     <Compile Include="DAL\Contexten\Mssql\IngredientMssql.cs" />
@@ -72,8 +84,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\BestelLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BestelForm.resx">
+      <DependentUpon>BestelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bon.resx">
+      <DependentUpon>Bon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,9 +118,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

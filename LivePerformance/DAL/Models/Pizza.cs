@@ -33,6 +33,15 @@ namespace LivePerformance.DAL.Models
             {
                 Ingredienten.Add(ir.GetbyId(ingredient));
             }
+            foreach (Ingredient ingredient in Ingredienten)
+            {
+                Prijs = Prijs + ingredient.Prijs;
+            }
+        }
+
+        public override string ToString()
+        {
+            return Naam;
         }
     }
 }

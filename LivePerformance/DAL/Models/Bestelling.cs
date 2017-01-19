@@ -10,7 +10,7 @@ namespace LivePerformance.DAL.Models
     public class Bestelling
     {
         public int Id { get; private set; }
-        public double Price { get; private set; }
+        public double Prijs { get; private set; }
         public double Btw { get; private set; }
         public bool Afhalen { get; private set; }
         public List<Pizza> Pizzas { get; private set; }
@@ -19,7 +19,7 @@ namespace LivePerformance.DAL.Models
         public Bestelling(int id, double price, double btw, bool afhalen, List<Pizza> pizzas, List<Product> products)
         {
             Id = id;
-            Price = price;
+            Prijs = price;
             Btw = btw;
             Afhalen = afhalen;
             Pizzas = pizzas;
@@ -30,6 +30,23 @@ namespace LivePerformance.DAL.Models
         {
             Pizzas = new List<Pizza>();
             Products = new List<Product>();
+
         }
+
+        public void UpdatePrijs()
+        {
+            Prijs = 0;
+            foreach (Pizza pizza in Pizzas)
+            {
+                Prijs = Prijs + pizza.Prijs;
+            }
+            foreach (Product product in Products)
+            {
+                Prijs = Prijs + product.Prijs;
+            }
+        }
+
+        
+
     }
 }

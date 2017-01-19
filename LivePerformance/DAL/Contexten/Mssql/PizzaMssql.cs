@@ -62,7 +62,26 @@ namespace LivePerformance.DAL.Contexten.Mssql
 
         public List<Pizza> GetAll()
         {
-            throw new NotImplementedException();
+          List<int> x = new List<int>();
+        List<Pizza> p = new List<Pizza>();
+            using (var con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                using (var cmd = new SqlCommand("Select  * from pizza", con))
+                {
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        x.Add(Convert.ToInt16(reader["Id"]));
+                    }
+                }
+            }
+            foreach (int pizzaId in x)
+            {
+                p.Add(GetbyId(pizzaId));
+            }
+            return p;
         }
     }
-}
+    }
+

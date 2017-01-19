@@ -28,7 +28,8 @@ namespace LivePerformance.DAL.Contexten.Mssql
                             Convert.ToInt16(reader["Id"]),
                             Convert.ToString(reader["Naam"]),
                             Convert.ToBoolean(reader["Halal"]),
-                            Convert.ToBoolean(reader["Veganistisch"]));
+                            Convert.ToBoolean(reader["Veganistisch"]),
+                            Convert.ToDouble(reader["Prijs"]));
                     }
                     return i;
                 }
@@ -65,7 +66,8 @@ namespace LivePerformance.DAL.Contexten.Mssql
                             Convert.ToInt16(reader["Id"]),
                             Convert.ToString(reader["Naam"]),
                             Convert.ToBoolean(reader["Halal"]),
-                            Convert.ToBoolean(reader["Veganistisch"])));
+                            Convert.ToBoolean(reader["Veganistisch"]),
+                            Convert.ToDouble(reader["Prijs"])));
                     }
                 }
             }

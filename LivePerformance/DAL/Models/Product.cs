@@ -20,5 +20,10 @@ namespace LivePerformance.DAL.Models
             Naam = naam;
             Alcohol = alcohol;
         }
+
+        public override string ToString()
+        {
+            return Naam;
+        }
     }
 }

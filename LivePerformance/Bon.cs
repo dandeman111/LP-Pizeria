@@ -7,23 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LivePerformance.DAL.Contexten.Mssql;
 using LivePerformance.DAL.Models;
-using LivePerformance.DAL.Repositories;
+using LivePerformance.Logic;
 
 namespace LivePerformance
 {
-    public partial class Form1 : Form
+    public partial class Bon : Form
     {
-        public Form1()
+        private BestelLogic bl;
+        public Bon(BestelLogic bestelLogic)
         {
             InitializeComponent();
+            bl = bestelLogic;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            BestelForm b = new BestelForm();
-            b.ShowDialog();
+        private void btnExporteer_Click(object sender, EventArgs e)
+        { 
+            bl.ExporteerBon();
         }
     }
 }
