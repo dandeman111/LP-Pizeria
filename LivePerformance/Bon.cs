@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using LivePerformance.Logic;
 
@@ -14,9 +15,17 @@ namespace LivePerformance
         }
 
         private void btnExporteer_Click(object sender, EventArgs e)
-        { 
-            bl.ExporteerBon();
-            MessageBox.Show("De bon is opgeslagen als bon.txt");
+        {
+            try
+            {
+                bl.ExporteerBon();
+                MessageBox.Show("De bon is opgeslagen als bon.txt");
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Het bestand kon niet worden weggeschreven");
+            }
+            
         }
     }
 }
