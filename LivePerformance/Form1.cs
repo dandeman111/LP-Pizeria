@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LivePerformance.DAL.Contexten.Mssql;
-using LivePerformance.DAL.Models;
-using LivePerformance.DAL.Repositories;
 
 namespace LivePerformance
 {
@@ -32,9 +22,6 @@ namespace LivePerformance
             form.ShowDialog();
         }
 
-        private void btnInToevoegen_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
