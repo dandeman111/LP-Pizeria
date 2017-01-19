@@ -1,25 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LivePerformance.Logic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using LivePerformance.DAL.Models;
-using LivePerformance.DAL.Repositories;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LivePerformance.Logic.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class BestelLogicTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void GeefItemsTest() //deze test of alle producten netjes op het bestellingslijstje komen.
         {
             BestelLogic bl = new BestelLogic();
 
             Pizza pizza1 = new Pizza(1, true, false, "Rond", "pizza1", new List<int> {1, 2, 3, 4});
-            Pizza pizza2 = new Pizza(1, true, false, "Rond", "pizza2", new List<int> { 1, 2, 3, 4 });
+            Pizza pizza2 = new Pizza(1, true, false, "Rond", "pizza2", new List<int> { 1, 2, 3, 4 });//ik had geen tijd meer voor een memory context dus dan zo maar
             Pizza pizza3 = new Pizza(1, true, false, "Rond", "pizza3", new List<int> { 1, 2, 3, 4 });
             
             Product product1 = new Product(1,200,"product1",false);
@@ -32,11 +26,11 @@ namespace LivePerformance.Logic.Tests
             bl.VoegProductToe(product1);
             bl.VoegProductToe(product2);
 
-            Assert.AreEqual(bl.GeefItems()[0].ToString(),"pizza1");
-            Assert.AreEqual(bl.GeefItems()[1].ToString(), "pizza2");
-            Assert.AreEqual(bl.GeefItems()[2].ToString(), "pizza3");
-            Assert.AreEqual(bl.GeefItems()[3].ToString(), "product1");
-            Assert.AreEqual(bl.GeefItems()[4].ToString(), "product2");
+            Assert.AreEqual(bl.GeefItems()[0],"pizza1");
+            Assert.AreEqual(bl.GeefItems()[1], "pizza2");
+            Assert.AreEqual(bl.GeefItems()[2], "pizza3");
+            Assert.AreEqual(bl.GeefItems()[3], "product1");
+            Assert.AreEqual(bl.GeefItems()[4], "product2");
 
         }
     }

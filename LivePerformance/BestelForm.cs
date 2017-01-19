@@ -20,17 +20,20 @@ namespace LivePerformance
         {
             try
             {
-                b.plaatsBestelling();
+                if (b.plaatsBestelling())
+                {
+                    LaadUi();
+                    Bon formbon = new Bon(b);
+                    formbon.ShowDialog();
+                    Close();
+                }
             }
             catch (SqlException)
             {
                 MessageBox.Show("Er is iets mis gegaan met de database");
             }
             
-            LaadUi();
-            Bon formbon = new Bon(b);
-            formbon.ShowDialog();
-            Close();
+            
         }
 
         private void lblOverig_Click(object sender, EventArgs e)

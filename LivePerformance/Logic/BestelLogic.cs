@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using LivePerformance.DAL.Contexten.Mssql;
 using LivePerformance.DAL.Models;
 using LivePerformance.DAL.Repositories;
@@ -66,9 +67,19 @@ namespace LivePerformance.Logic
             return ls;
         }
 
-        public void plaatsBestelling()
+        public bool plaatsBestelling()
         {
-            BestellingRepo.Add(Bestelling);
+            if (Bestelling.Pizzas.Count > 0 || Bestelling.Products.Count > 0)
+            {
+                BestellingRepo.Add(Bestelling);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("je kan geen lege bestelling plaatsen");
+                return false;
+            }
+            
         }
 
         public double geefPrijs()
