@@ -14,7 +14,7 @@ namespace LivePerformance.Logic.Tests
     public class BestelLogicTests
     {
         [TestMethod()]
-        public void GeefItemsTest()
+        public void GeefItemsTest() //deze test of alle producten netjes op het bestellingslijstje komen.
         {
             BestelLogic bl = new BestelLogic();
 
@@ -32,7 +32,12 @@ namespace LivePerformance.Logic.Tests
             bl.VoegProductToe(product1);
             bl.VoegProductToe(product2);
 
-            Assert.AreEqual(bl.GeefItems()[1].ToString(),"pizza1");
+            Assert.AreEqual(bl.GeefItems()[0].ToString(),"pizza1");
+            Assert.AreEqual(bl.GeefItems()[1].ToString(), "pizza2");
+            Assert.AreEqual(bl.GeefItems()[2].ToString(), "pizza3");
+            Assert.AreEqual(bl.GeefItems()[3].ToString(), "product1");
+            Assert.AreEqual(bl.GeefItems()[4].ToString(), "product2");
+
         }
     }
 }
