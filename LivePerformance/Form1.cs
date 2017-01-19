@@ -25,5 +25,16 @@ namespace LivePerformance
             BestelForm b = new BestelForm();
             b.ShowDialog();
         }
+
+        private void btnPrToevoegen_Click(object sender, EventArgs e)
+        {
+            BeheerForm form = new BeheerForm();
+            form.ShowDialog();
+        }
+
+        private void btnInToevoegen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

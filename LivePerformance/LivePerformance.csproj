@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeheerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeheerForm.Designer.cs">
+      <DependentUpon>BeheerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BestelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +90,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Beheerlogic.cs" />
     <Compile Include="Logic\BestelLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BeheerForm.resx">
+      <DependentUpon>BeheerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BestelForm.resx">
       <DependentUpon>BestelForm.cs</DependentUpon>
     </EmbeddedResource>

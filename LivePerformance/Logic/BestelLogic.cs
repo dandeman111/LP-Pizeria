@@ -37,13 +37,13 @@ namespace LivePerformance.Logic
 
         public void VoegPizzaToe(Pizza pizza)
         {
-            Bestelling.Pizzas.Add(pizza);
+            if(pizza !=null) { Bestelling.Pizzas.Add(pizza);}
             Bestelling.UpdatePrijs();
         }
 
         public void VoegProductToe(Product product)
         {
-            Bestelling.Products.Add(product);
+            if(product != null) { Bestelling.Products.Add(product);}
             Bestelling.UpdatePrijs();
         }
 
@@ -73,7 +73,6 @@ namespace LivePerformance.Logic
         public void plaatsBestelling()
         {
             BestellingRepo.Add(Bestelling);
-            Bestelling = new Bestelling();
         }
 
         public double geefPrijs()
@@ -91,13 +90,13 @@ namespace LivePerformance.Logic
                 writer.WriteLine("Klantbon voor klant");
                 foreach (Pizza pizza in Bestelling.Pizzas)
                 {
-                    writer.WriteLine(pizza.Naam + ": " + pizza.Prijs);
+                    writer.WriteLine(pizza.Naam + ": " + pizza.Prijs/100);
                 }
                 foreach (Product product in Bestelling.Products)
                 {
-                    writer.WriteLine(product.Naam + ": "+product.Prijs);
+                    writer.WriteLine(product.Naam + ": "+product.Prijs/100);
                 }
-                writer.WriteLine("Te betalen bedrag: "+ Bestelling.Prijs);
+                writer.WriteLine("Te betalen bedrag: "+ Bestelling.Prijs/100);
             }
         }
 

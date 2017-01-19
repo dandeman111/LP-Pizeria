@@ -25,5 +25,11 @@ namespace LivePerformance.DAL.Models
         {
             return Naam;
         }
+        public Product( double prijs, string naam, bool alcohol)
+        {
+            Prijs = prijs;
+            Naam = naam;
+            Alcohol = alcohol;
+        }
     }
 }

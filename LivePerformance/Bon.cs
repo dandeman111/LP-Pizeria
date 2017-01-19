@@ -24,6 +24,7 @@ namespace LivePerformance
         private void btnExporteer_Click(object sender, EventArgs e)
         { 
             bl.ExporteerBon();
+            MessageBox.Show("De bon is opgeslagen als bon.txt");
         }
     }
 }

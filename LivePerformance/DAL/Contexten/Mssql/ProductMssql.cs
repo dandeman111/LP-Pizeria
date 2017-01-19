@@ -37,7 +37,17 @@ namespace LivePerformance.DAL.Contexten.Mssql
 
         public void Add(Product product)
         {
-            throw new NotImplementedException();
+            using (var con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                using (var cmd2 = new SqlCommand("insert into Product(Naam,Prijs,Alcohol) Values(@naam,@prijs,@alcohol)", con))
+                {
+                    cmd2.Parameters.AddWithValue("@naam", product.Naam);
+                    cmd2.Parameters.AddWithValue("@prijs", product.Prijs);
+                    cmd2.Parameters.AddWithValue("@alcohol", product.Alcohol);
+                    cmd2.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Update(Product product)

@@ -23,5 +23,12 @@ namespace LivePerformance.DAL.Models
             Veganistisch = veganistisch;
             Prijs = prijs;
         }
+        public Ingredient(string naam, bool halal, bool veganistisch, double prijs)
+        {
+            Naam = naam;
+            Halal = halal;
+            Veganistisch = veganistisch;
+            Prijs = prijs;
+        }
     }
 }

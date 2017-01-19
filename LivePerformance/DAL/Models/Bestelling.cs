@@ -35,15 +35,18 @@ namespace LivePerformance.DAL.Models
 
         public void UpdatePrijs()
         {
-            Prijs = 0;
-            foreach (Pizza pizza in Pizzas)
-            {
-                Prijs = Prijs + pizza.Prijs;
-            }
-            foreach (Product product in Products)
-            {
-                Prijs = Prijs + product.Prijs;
-            }
+            
+                Prijs = 0;
+                foreach (Pizza pizza in Pizzas)
+                {
+                    Prijs = Prijs + pizza.Prijs;
+                }
+                foreach (Product product in Products)
+                {
+                    Prijs = Prijs + product.Prijs;
+                }
+           
+            
         }
 
         

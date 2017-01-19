@@ -30,6 +30,7 @@ namespace LivePerformance
             LaadUi();
             Bon formbon = new Bon(b);
             formbon.ShowDialog();
+            this.Close();
         }
 
         private void lblOverig_Click(object sender, EventArgs e)
