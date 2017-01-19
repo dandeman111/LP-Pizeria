@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using LivePerformance.Logic;
 
@@ -27,12 +21,29 @@ namespace LivePerformance
 
         private void Toevoegen_Click(object sender, EventArgs e)
         {
-            b.ProductToevoegen(tbNaam.Text,Convert.ToDouble(tbPrijs.Text),chbAlcohol.Checked);
+            try
+            {
+                b.ProductToevoegen(tbNaam.Text, Convert.ToDouble(tbPrijs.Text), chbAlcohol.Checked);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Er is iets missgegeaan in de database");
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            b.ingredientToevoegen(tbInNaam.Text,Convert.ToDouble(tbInPrijs.Text),cbInHalal.Checked,cbInVeg.Checked );
+            try
+            {
+                b.ingredientToevoegen(tbInNaam.Text, Convert.ToDouble(tbInPrijs.Text), cbInHalal.Checked,
+                    cbInVeg.Checked);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Er is iets missgegeaan in de database");
+            }
+           
         }
     }
 }

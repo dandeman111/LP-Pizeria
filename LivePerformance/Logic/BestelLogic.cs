@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LivePerformance.DAL.Contexten.Mssql;
 using LivePerformance.DAL.Models;
 using LivePerformance.DAL.Repositories;
