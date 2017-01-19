@@ -9,63 +9,63 @@ using LivePerformance.DAL.Models;
 
 namespace LivePerformance.DAL.Contexten.Mssql
 {
-    class ProductMssql:Connstring , IProduct
+    class IngredientMssql:Connstring,IIngredient
     {
-        public Product GetbyId(int id)
+        public Ingredient GetbyId(int id)
         {
             using (var con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                using (var cmd = new SqlCommand("Select * from Product where id = @id", con))
+                using (var cmd = new SqlCommand("Select * from ingredient where id = @id", con))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    Product p;
-                    p = null;
+                    Ingredient i;
+                    i = null;
                     var reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        p = new Product(
+                        i = new Ingredient(
                             Convert.ToInt16(reader["Id"]),
-                            Convert.ToDouble(reader["Prijs"]),
                             Convert.ToString(reader["Naam"]),
-                            Convert.ToBoolean(reader["alcohol"]));
+                            Convert.ToBoolean(reader["Halal"]),
+                            Convert.ToBoolean(reader["Veganistisch"]));
                     }
-                    return p;
+                    return i;
                 }
             }
         }
 
-        public void Add(Product product)
+        public void Add(Ingredient product)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Product product)
+        public void Update(Ingredient product)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Product product)
+        public void Delete(Ingredient product)
         {
             throw new NotImplementedException();
         }
 
-        public List<Product> GetAll()
+        public List<Ingredient> GetAll()
         {
-            List<Product> p = new List<Product>();
+            List<Ingredient> p = new List<Ingredient>();
             using (var con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                using (var command = new SqlCommand("Select * from Product", con))
+                using (var command = new SqlCommand("Select * from Ingredient", con))
                 {
-                    var reader =command.ExecuteReader();
+                    var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        p.Add(new Product(
+                        p.Add(new Ingredient(
                             Convert.ToInt16(reader["Id"]),
-                            Convert.ToDouble(reader["Prijs"]),
                             Convert.ToString(reader["Naam"]),
-                            Convert.ToBoolean(reader["alcohol"])));
+                            Convert.ToBoolean(reader["Halal"]),
+                            Convert.ToBoolean(reader["Veganistisch"])));
                     }
                 }
             }

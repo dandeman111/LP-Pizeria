@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LivePerformance.DAL.Contexten.Mssql;
+using LivePerformance.DAL.Models;
+using LivePerformance.DAL.Repositories;
 
 namespace LivePerformance
 {
@@ -20,9 +22,7 @@ namespace LivePerformance
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProductMssql pd = new ProductMssql();
-            MessageBox.Show(pd.GetAll()[0].Naam);
-            MessageBox.Show(pd.GetAll()[1].Naam);
+            
         }
     }
 }

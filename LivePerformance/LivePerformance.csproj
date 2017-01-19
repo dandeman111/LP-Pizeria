@@ -46,14 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Contexten\Mssql\BestellingMssql.cs" />
     <Compile Include="DAL\Contexten\Mssql\Connstring.cs" />
+    <Compile Include="DAL\Contexten\Mssql\IngredientMssql.cs" />
+    <Compile Include="DAL\Contexten\Mssql\PizzaMssql.cs" />
     <Compile Include="DAL\Contexten\Mssql\ProductMssql.cs" />
+    <Compile Include="DAL\Interfaces\IBaklijst.cs" />
+    <Compile Include="DAL\Interfaces\IBestelling.cs" />
+    <Compile Include="DAL\Interfaces\IIngredient.cs" />
+    <Compile Include="DAL\Interfaces\IPizza.cs" />
     <Compile Include="DAL\Interfaces\IProduct.cs" />
     <Compile Include="DAL\Models\Baklijst.cs" />
     <Compile Include="DAL\Models\Bestelling.cs" />
     <Compile Include="DAL\Models\Ingredient.cs" />
     <Compile Include="DAL\Models\Pizza.cs" />
     <Compile Include="DAL\Models\Product.cs" />
+    <Compile Include="DAL\Repositories\BestellingRepo.cs" />
+    <Compile Include="DAL\Repositories\IngredientRepo.cs" />
+    <Compile Include="DAL\Repositories\PizzaRepo.cs" />
+    <Compile Include="DAL\Repositories\ProductRepo.cs" />
     <Compile Include="Enumurations\Vorm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -89,7 +100,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\Repositories\" />
     <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
